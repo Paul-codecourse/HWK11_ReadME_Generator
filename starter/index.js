@@ -2,20 +2,73 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const { memoryUsage } = require("process");
 
 // array of questions for user
+inquirer
 const questions = [
 // Prompt for project title -> add as the Title of the README
+{
+  type: 'input',
+  message: 'What is the title of your project?',
+  name: 'title',
+},
 // Prompt for description -> add to Description section
-// Prompt for Table of Contents -> add to Table of Contents section
+{
+  type: 'input',
+  message: 'Provide a description of your project:',
+  name: 'description',
+},
+// Prompt for Table of Contents -> add to Table of Contents section // Don't really need this as the layout is standard
+/*{
+  type: 'input',
+  message: 'Enter a Table of Contents for your README:',
+  name: 'tableOfContents',
+},*/
 // Prompt for installation instructions -> add to Intsallation section
+  {
+    type: 'input',
+    message: 'What are the installation instructions?',
+    name: 'installation',
+  },
 // Prompt for Usage information -> add to Usage section
+{
+  type: 'input',
+  message: 'How should the project be used?',
+  name: 'usage',
+},
 // Prompt for Licence -> add to Licence section and add a relevant badge to the top of the file
+{
+  type: 'list',
+  message: 'Choose a licence for your project:',
+  name: 'licence',
+  choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
+},
 // Prompt for contribution guidelines -> add to Contributing section
+{
+  type: 'input',
+  message: 'Explain the contribution guidelines:',
+  name: 'contribution',
+},
 // Prompt for test instructions -> add to Tests section
+{
+  type: 'input',
+  message: 'What are the test instructions?',
+  name: 'tests',
+},
 // Prompt for Questions
 // Prompt for GitHub username
+{
+  type: 'input',
+  message: 'What is your GitHub username?',
+  name: 'githubUsername',
+},
 // Prompt for email address
+{
+  type: 'input',
+  message: 'What is your email address?',
+  name: 'email',
+}
 ];
 
 // function to write README file
@@ -34,7 +87,63 @@ const questions = [
 // Make sure that the repo contains the package.json with the dependencies by running the npm init command
 
 
+
+
+
+
+
+
+
+
 function writeToFile(fileName, data) {
+
+  const readmeContent = `
+# Title
+
+${title}
+
+## Description
+
+${description}
+
+## Table of Contents
+
+- [Description](#description)
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
+
+${installation}
+
+## Usage
+
+${usage}
+
+## Licence
+
+${licence}
+
+## Contributing
+
+${contribution}
+
+## Tests
+
+${tests}
+
+## Questions
+
+For any questions, please contact [GitHub Username]${githubUsername} ([GitHub Profile URL]) or email [Email Address]${email}.
+`;
+
+fs.writeFileSync('README.md', readmeContent);
+console.log('README.md file created successfully.');
 }
 
 // function to initialize program
