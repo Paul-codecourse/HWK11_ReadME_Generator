@@ -1,74 +1,75 @@
 const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+/*const generateMarkdown = require("./utils/generateMarkdown");
 const { memoryUsage } = require("process");
 
 // array of questions for user
-inquirer
+inquirer*/
+// fixing inquirer placement
 const questions = [
-// Prompt for project title -> add as the Title of the README
-{
-  type: 'input',
-  message: 'What is the title of your project?',
-  name: 'title',
-},
-// Prompt for description -> add to Description section
-{
-  type: 'input',
-  message: 'Provide a description of your project:',
-  name: 'description',
-},
-// Prompt for Table of Contents -> add to Table of Contents section // Don't really need this as the layout is standard
-/*{
-  type: 'input',
-  message: 'Enter a Table of Contents for your README:',
-  name: 'tableOfContents',
-},*/
-// Prompt for installation instructions -> add to Intsallation section
+  // Prompt for project title -> add as the Title of the README
+  {
+    type: 'input',
+    message: 'What is the title of your project?',
+    name: 'title',
+  },
+  // Prompt for description -> add to Description section
+  {
+    type: 'input',
+    message: 'Provide a description of your project:',
+    name: 'description',
+  },
+  // Prompt for Table of Contents -> add to Table of Contents section // Don't really need this as the layout is standard
+  /*{
+    type: 'input',
+    message: 'Enter a Table of Contents for your README:',
+    name: 'tableOfContents',
+  },*/
+  // Prompt for installation instructions -> add to Intsallation section
   {
     type: 'input',
     message: 'What are the installation instructions?',
     name: 'installation',
   },
-// Prompt for Usage information -> add to Usage section
-{
-  type: 'input',
-  message: 'How should the project be used?',
-  name: 'usage',
-},
-// Prompt for Licence -> add to Licence section and add a relevant badge to the top of the file
-{
-  type: 'list',
-  message: 'Choose a licence for your project:',
-  name: 'licence',
-  choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
-},
-// Prompt for contribution guidelines -> add to Contributing section
-{
-  type: 'input',
-  message: 'Explain the contribution guidelines:',
-  name: 'contribution',
-},
-// Prompt for test instructions -> add to Tests section
-{
-  type: 'input',
-  message: 'What are the test instructions?',
-  name: 'tests',
-},
-// Prompt for Questions
-// Prompt for GitHub username
-{
-  type: 'input',
-  message: 'What is your GitHub username?',
-  name: 'githubUsername',
-},
-// Prompt for email address
-{
-  type: 'input',
-  message: 'What is your email address?',
-  name: 'email',
-}
+  // Prompt for Usage information -> add to Usage section
+  {
+    type: 'input',
+    message: 'How should the project be used?',
+    name: 'usage',
+  },
+  // Prompt for Licence -> add to Licence section and add a relevant badge to the top of the file
+  {
+    type: 'list',
+    message: 'Choose a licence for your project:',
+    name: 'licence',
+    choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
+  },
+  // Prompt for contribution guidelines -> add to Contributing section
+  {
+    type: 'input',
+    message: 'Explain the contribution guidelines:',
+    name: 'contribution',
+  },
+  // Prompt for test instructions -> add to Tests section
+  {
+    type: 'input',
+    message: 'What are the test instructions?',
+    name: 'tests',
+  },
+  // Prompt for Questions
+  // Prompt for GitHub username
+  {
+    type: 'input',
+    message: 'What is your GitHub username?',
+    name: 'githubUsername',
+  },
+  // Prompt for email address
+  {
+    type: 'input',
+    message: 'What is your email address?',
+    name: 'email',
+  }
 ];
 
 // function to write README file
@@ -89,22 +90,21 @@ const questions = [
 
 
 
+// Make sure to declare dependancies in the Repo such as npm and inquirer
 
 
 
 
-
-
+// fixed array identifier issues
 function writeToFile(fileName, data) {
-
   const readmeContent = `
 # Title
 
-${title}
+${data.title}
 
 ## Description
 
-${description}
+${data.description}
 
 ## Table of Contents
 
@@ -119,38 +119,42 @@ ${description}
 
 ## Installation
 
-${installation}
+${data.installation}
 
 ## Usage
 
-${usage}
+${data.usage}
 
 ## Licence
 
-${licence}
+${data.licence}
 
 ## Contributing
 
-${contribution}
+${data.contribution}
 
 ## Tests
 
-${tests}
+${data.tests}
 
 ## Questions
 
 For any questions, please contact [GitHub Username]${githubUsername} ([GitHub Profile URL]) or email [Email Address]${email}.
 `;
 
-fs.writeFileSync('README.md', readmeContent);
-console.log('README.md file created successfully.');
+fs.writeFileSync(fileName, readmeContent);
+console.log(`${fileName} file created successfully.`);
 }
 
 // function to initialize program
 function init() {
-
-}
-
+//inquirer call
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      writeToFile('README.md', answers);
+    })
+  }
 // function call to initialize program
 init();
 
