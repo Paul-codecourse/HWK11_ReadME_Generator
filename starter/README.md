@@ -1,11 +1,11 @@
 
 # Title
 
-f
+project 1 (again)
 
 ## Description
 
-f
+Testing the readme generator
 
 ## Table of Contents
 
@@ -20,24 +20,24 @@ f
 
 ## Installation
 
-f
+Add node, inquirer etc
 
 ## Usage
 
-f
+start with node.js and fill in the prompts
 
 ## Licence
 
-GPL
+Apache
 
 ## Contributing
 
-f
+N/A
 
 ## Tests
 
-f
+No testing installed
 
 ## Questions
 
-For any questions, please contact [GitHub Username]fgat [GitHub Profile URL]Who can be found at https://github.com/fgat or email on [Email Address]fgat@tsedt.com.
+For any questions, clarifications, comments, or suggestions, please contact testGit. Who can be found at https://github.com/testGit or email on testgit@mail.com.

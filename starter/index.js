@@ -1,12 +1,10 @@
 const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
-/*const generateMarkdown = require("./utils/generateMarkdown");
-const { memoryUsage } = require("process");
+// const generateMarkdown = require("./utils/generateMarkdown");
+// const { memoryUsage } = require("process");
 
 // array of questions for user
-inquirer*/
-// fixing inquirer placement
 const questions = [
   // Prompt for project title -> add as the Title of the README
   {
@@ -20,13 +18,7 @@ const questions = [
     message: 'Provide a description of your project:',
     name: 'description',
   },
-  // Prompt for Table of Contents -> add to Table of Contents section // Don't really need this as the layout is standard
-  /*{
-    type: 'input',
-    message: 'Enter a Table of Contents for your README:',
-    name: 'tableOfContents',
-  },*/
-  // Prompt for installation instructions -> add to Intsallation section
+    // Prompt for installation instructions -> add to Intsallation section
   {
     type: 'input',
     message: 'What are the installation instructions?',
@@ -38,11 +30,11 @@ const questions = [
     message: 'How should the project be used?',
     name: 'usage',
   },
-  // Prompt for Licence -> add to Licence section and add a relevant badge to the top of the file
+  // Prompt for License -> add to License section and add a relevant badge to the top of the file
   {
     type: 'list',
-    message: 'Choose a licence for your project:',
-    name: 'licence',
+    message: 'Choose a license for your project:',
+    name: 'license',
     choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
   },
   // Prompt for contribution guidelines -> add to Contributing section
@@ -57,8 +49,7 @@ const questions = [
     message: 'What are the test instructions?',
     name: 'tests',
   },
-  // Prompt for Questions
-  // Prompt for GitHub username
+    // Prompt for GitHub username
   {
     type: 'input',
     message: 'What is your GitHub username?',
@@ -75,11 +66,11 @@ const questions = [
 // function to write README file
 // Make the prompted for Title the Title of the README
 // Add the prompts to the relevant sections Description, Installation, Usage, Contributing, and Tests
-// Make the logo/badge for the specific licence selected appear at the top of the README
-// Make a description of the specific licence chosen appear under **Licence**
+// Make the logo/badge for the specific license selected appear at the top of the README
+// Make a description of the specific license chosen appear under **License**
 // Make the prompted GitHub username information appear in the section of the README entitled Questions, with a link to their GitHub profile (eg standardised "https://github.com/${githubUsername}")  for 
 // Make sure instructions on how to reach you with extra questions appear with your email address in the section called Questions
-// Make sure all of the following sections are created. *Title, Description, Table of Contents, Installation, Usage, Licence, Contributing, Tests, Questions (make sure to add the relevant markup eg. **)
+// Make sure all of the following sections are created. *Title, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, Questions (make sure to add the relevant markup eg. **)
 // Make sure When the user click on a link in the Table of Contents it links to the corresponding section of the README
 
 // In the Repo:-
@@ -125,9 +116,9 @@ ${data.installation}
 
 ${data.usage}
 
-## Licence
+## License
 
-${data.licence}
+${data.license}
 
 ## Contributing
 
@@ -159,37 +150,6 @@ function init() {
 init();
 
 // Still to add 
-// -working anchor links
+// -working anchor links - tested working
 // -links to explanation of license
-// -selected licence badge display
-
-
-
-// example of a series of questions using inquirer
-/*
-const inquirer = import('inquirer');
-const fs = require('fs')
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      message: 'What is your user name?',
-      name: 'username',
-    },
-    {
-      type: 'password',
-      message: 'What is your password?',
-      name: 'password',
-    },
-    {
-      type: 'password',
-      message: 'Re-enter password to confirm:',
-      name: 'confirm',
-    },
-  ])
-  .then((response) =>
-    response.confirm === response.password
-      ? console.log('Success!')
-      : console.log('You forgot your password already?!')
-  );
-*/
+// -selected license badge display
