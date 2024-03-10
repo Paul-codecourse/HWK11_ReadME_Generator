@@ -68,7 +68,7 @@ const questions = [
   {
     type: 'input',
     message: 'What is your email address?',
-    name: 'email',
+    name: 'eMail',
   }
 ];
 
@@ -139,7 +139,7 @@ ${data.tests}
 
 ## Questions
 
-For any questions, please contact [GitHub Username]${githubUsername} ([GitHub Profile URL]) or email [Email Address]${email}.
+For any questions, clarifications, comments, or suggestions, please contact ${data.githubUsername}. Who can be found at https://github.com/${data.githubUsername} or email on ${data.eMail}.
 `;
 
 fs.writeFileSync(fileName, readmeContent);
@@ -158,7 +158,10 @@ function init() {
 // function call to initialize program
 init();
 
-
+// Still to add 
+// -working anchor links
+// -links to explanation of license
+// -selected licence badge display
 
 
 
