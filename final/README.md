@@ -12,7 +12,7 @@ To use the program the node, npm and inquirer software is needed to be installed
 Install node, npm and inquirer
 Start the program with command "node index.js" from the command line
 
-![Screenshot of the app ](https://paul-codecourse.github.io/WK11-README/assets/HWK11_ReadME_Generator.jpg)
+![Screenshot of the app ](https://paul-codecourse.github.io/WHWK11_ReadME_Generator/assets/HWK11_ReadME_Generator.jpg)
 
 ## Credits
 
