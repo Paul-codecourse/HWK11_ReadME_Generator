@@ -1,12 +1,12 @@
 
 # Title
 
-
+Project 11 README.md file generator
 
 ## Description
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
+An app to create standardised high quality README.md files for the repo
 
 ## Table of Contents
 
@@ -21,11 +21,11 @@
 
 ## Installation
 
-
+Add node, npm and inquirer prior to running the file
 
 ## Usage
 
-
+Open a command line terminal and type node index.js
 
 ## License
 
@@ -34,12 +34,12 @@ A permissive license with very few restrictions, allowing the sale, copying, mod
 
 ## Contributing
 
-
+N/A
 
 ## Tests
 
-
+No tests were installed
 
 ## Questions
 
-For any questions, clarifications, comments, or suggestions, please contact . Who can be found at https://github.com/ or email on .
+For any questions, clarifications, comments, or suggestions, please contact testGit. Who can be found at https://github.com/testGit or email on testGit@testemail.com.

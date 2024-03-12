@@ -1,7 +1,7 @@
 # WK11HWK README.md  - Readme Webpage
 ## Description
 
-The repository contains the files required for  the REAME.md file 
+The repository contains the files required for the README.md file generator
 
 ## Installation
 
