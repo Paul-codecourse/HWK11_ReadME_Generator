@@ -14,7 +14,7 @@ Start the program with command "node index.js" from the command line
 
 ![Screenshot of the app ](https://paul-codecourse.github.io/HWK11_ReadME_Generator/assets/WK11_readme_image.jpg)
 
-![Demo of the app ](https://paul-codecourse.github.io/WHWK11_ReadME_Generator/assets/HWK11_README_Generator_Demo_Video.mp4)
+![Demo of the app ](https://paul-codecourse.github.io/HWK11_ReadME_Generator/assets/HWK11_README_Generator_Demo_Video.mp4)
 
 ## Credits
 
